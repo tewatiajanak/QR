@@ -489,6 +489,7 @@ const ImportQRPage = () => {
       link.click();
       link.remove();
       URL.revokeObjectURL(url);
+      toast.success("All QR codes downloaded successfully.");
     } catch (error) {
       console.error(error);
       toast.error("Failed to create bulk download.");

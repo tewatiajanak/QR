@@ -63,8 +63,10 @@ const QRGeneratorPage = () => {
     <div className="container-fluid p-1 fade-in">
       <div className="row">
         <div className="col-12 mb-3">
-          <h1 className="qr-page-title fw-bold mb-1">QR Code Generator</h1>
-          <p className="text-muted mb-0">
+          <h1 className="qr-page-title fw-bold mb-1 d-none d-md-block">
+            QR Code Generator
+          </h1>
+          <p className="text-muted mb-0 d-none d-md-block">
             Create stunning, customized QR codes in seconds
           </p>
         </div>

@@ -53,7 +53,6 @@ function App() {
             </button>
 
             <div>
-              <p className="mobile-topbar__eyebrow">KnowVato</p>
               <h1 className="mobile-topbar__title">{pageTitle}</h1>
             </div>
           </div>

@@ -624,28 +624,44 @@ input[type="range"]::-moz-range-thumb {
     padding: 0.85rem;
   }
 
-.btn-outline-primary {
-  padding: 6px;
-}
-
-
+  .btn-outline-primary {
+    padding: 6px;
+  }
 
   .card-body {
     padding: 1rem !important;
   }
 
   .top-controls-row {
-    gap: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.65rem;
   }
 
   .qr-content-selector {
+    display: flex;
+    flex-wrap: wrap;
     gap: 0.5rem;
+    width: 100%;
   }
 
   .qr-type-button {
-    min-width: 112px;
-    padding-left: 0.7rem;
-    padding-right: 0.7rem;
+    flex: 1 1 calc(50% - 0.25rem);
+    min-width: 0;
+    width: auto;
+    padding-left: 0.65rem;
+    padding-right: 0.65rem;
+    justify-content: center;
+  }
+
+  .logo-uploader-wrapper {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .logo-uploader {
+    width: 100%;
     justify-content: center;
   }
 

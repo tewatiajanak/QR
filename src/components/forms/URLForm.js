@@ -2,26 +2,39 @@
 import React, { useState } from "react";
 import { useQR } from "../../context/QRContext";
 
+export const normalizeUrlInput = (value = "") => {
+  const trimmed = value.trim();
+
+  if (!trimmed) {
+    return "";
+  }
+
+  let normalized = trimmed;
+
+  if (!/^https?:\/\//i.test(normalized) && !normalized.startsWith("www.")) {
+    normalized = `https://${normalized}`;
+  } else if (normalized.startsWith("www.")) {
+    normalized = `https://${normalized}`;
+  }
+
+  return normalized;
+};
+
 const URLForm = () => {
   const { qrData, updateQRData } = useQR();
   const [url, setUrl] = useState(qrData.value || "");
 
   const validateAndUpdate = (value) => {
+    const nextValue = value.trim();
     setUrl(value);
-    if (
-      value &&
-      (value.startsWith("http://") ||
-        value.startsWith("https://") ||
-        value.startsWith("www."))
-    ) {
-      let finalUrl = value;
-      if (!value.startsWith("http://") && !value.startsWith("https://")) {
-        finalUrl = "https://" + value;
-      }
-      updateQRData({ value: finalUrl });
-    } else if (value === "") {
+
+    if (!nextValue) {
       updateQRData({ value: "" });
+      return;
     }
+
+    const finalUrl = normalizeUrlInput(nextValue);
+    updateQRData({ value: finalUrl });
   };
 
   return (
