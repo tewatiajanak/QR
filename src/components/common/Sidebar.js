@@ -44,7 +44,7 @@ const Sidebar = ({ activePage, setActivePage, isMobileMenuOpen, onClose }) => {
       </button>
 
       <div className="mt-auto pt-3">
-        <small className="text-muted">Powered by KnowVato</small>
+        <small className="text-muted">Powered by Nirvaan Technologies</small>
       </div>
     </aside>
   );
